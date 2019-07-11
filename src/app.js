@@ -7,6 +7,8 @@ const forecast = require('./utils/forecast')
 
 const app = express()
 
+const port = process.env.port || 3000
+
 app.use(express.static(path.join(__dirname,'../public')))
 
 const viewsPath = path.join(__dirname,'../template/views')
@@ -108,6 +110,6 @@ app.get('/help',(req,res)=>{
 
 
 
-app.listen(3000,()=>{
-    console.log('server is UP on ',3000)
+app.listen(port,()=>{
+    console.log('server is UP on ',port)
 })
